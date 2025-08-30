@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Talento Universitario CUN</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-cun-green { color: #528926; }
+        .bg-cun-green { background-color: #528926; }
+        .bg-cun-yellow { background-color: #f9d71c; }
+        .border-cun-yellow { border-color: #f9d71c; }
+        .focus-ring-cun-green:focus {
+            --tw-ring-color: #528926;
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(82, 137, 38, 0.9), rgba(100, 160, 50, 0.9)), url('https://placehold.co/1920x1080/4c2483/f9d71c?text=Cancha+de+Futbol') center/cover no-repeat;
+            background-blend-mode: multiply;
+        }
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <!-- Logo CUN -->
+                <img src="/logo.png" alt="Logo Copa Talento Universitario CUN" class="h-12 w-auto">
+            </div>
+            <div class="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
+                <button onclick="showPage('home')" class="nav-link px-4 py-2 font-semibold text-white bg-cun-green rounded-lg transition-colors duration-200">Inicio</button>
+                <button onclick="showPage('programs')" class="nav-link px-4 py-2 font-semibold text-gray-700 hover:bg-gray-200 rounded-lg transition-colors duration-200">Programas Académicos</button>
+                <button onclick="showPage('credits')" class="nav-link px-4 py-2 font-semibold text-gray-700 hover:bg-gray-200 rounded-lg transition-colors duration-200">Nuestra Misión</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-10">
+
+        <!-- Página Principal (Home) -->
+        <section id="home-page" class="page-section">
+            <header class="hero text-white text-center py-20 md:py-32 rounded-3xl mb-12">
+                <div class="max-w-4xl mx-auto px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                        ¡Copa Talento Universitario CUN!
+                    </h1>
+                    <p class="text-lg md:text-xl font-medium mb-6">
+                        Torneo Intercolegial de Fútbol CUN: Tu Beca Empieza Aquí
+                    </p>
+                    <p class="text-xl md:text-2xl font-bold mb-8">
+                        🗓️ 1 de agosto 🗓️
+                    </p>
+                    <p class="text-lg mb-8">
+                        Únete a un emocionante torneo de fútbol y demuestra tu talento. El equipo campeón recibirá una **beca completa** para una carrera profesional en la Corporación Unificada Nacional de Educación Superior - CUN.
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center gap-4">
+                        <a href="#" onclick="showPage('programs')" class="bg-white text-cun-green font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105">
+                            Inscríbete Ahora
+                        </a>
+                        <a href="#" onclick="showPage('programs')" class="bg-white text-cun-green font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105">
+                            Conoce Nuestros Programas
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Tarjeta de Oportunidad -->
+                <div class="card bg-white p-6 shadow-md">
+                    <div class="text-5xl text-cun-green mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-2">Una Beca para tu Futuro</h3>
+                    <p class="text-gray-600">El equipo campeón obtendrá una beca completa para estudiar en CUN. ¡Es tu oportunidad de brillar y asegurar tu futuro profesional!</p>
+                </div>
+                <!-- Tarjeta de Networking -->
+                <div class="card bg-white p-6 shadow-md">
+                    <div class="text-5xl text-cun-green mb-4">🤝</div>
+                    <h3 class="text-xl font-bold mb-2">Conexiones Valiosas</h3>
+                    <p class="text-gray-600">Este evento es un espacio estratégico de networking para conectar con futuros colegas y líderes. Construye relaciones que duren toda tu vida.</p>
+                </div>
+                <!-- Tarjeta de Talento -->
+                <div class="card bg-white p-6 shadow-md">
+                    <div class="text-5xl text-cun-green mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">Impulsando el Talento Joven</h3>
+                    <p class="text-gray-600">En CUN creemos en el potencial de los jóvenes. Esta copa es nuestra iniciativa para descubrir y apoyar a la próxima generación de líderes.</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- Página de Programas Académicos (inicialmente oculta) -->
+        <section id="programs-page" class="page-section hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-cun-green mb-8">
+                Explora tu Futuro Profesional en CUN
+            </h2>
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <p class="text-lg text-gray-600">
+                    Tu beca obtenida en la **Copa Talento Universitario** puede ser aplicada a cualquiera de nuestros programas. Descubre una educación que te prepara para los desafíos del mundo real.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tarjeta de Programa 1 -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-2">Ingeniería de Sistemas</h3>
+                    <p class="text-gray-600 mb-4">Un programa enfocado en la innovación y el desarrollo tecnológico. Prepárate para ser líder en la era digital.</p>
+                    <a href="#" class="inline-block text-cun-green font-semibold border-b-2 border-cun-green hover:border-cun-yellow transition-colors duration-200">Más información</a>
+                </div>
+                <!-- Tarjeta de Programa 2 -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-2">Administración de Empresas</h3>
+                    <p class="text-gray-600 mb-4">Aprende a gestionar negocios de manera estratégica, desarrollando habilidades para liderar y tomar decisiones clave.</p>
+                    <a href="#" class="inline-block text-cun-green font-semibold border-b-2 border-cun-green hover:border-cun-yellow transition-colors duration-200">Más información</a>
+                </div>
+                <!-- Tarjeta de Programa 3 -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-2">Comunicación Social</h3>
+                    <p class="text-gray-600 mb-4">Descubre cómo moldear narrativas poderosas y conectar con audiencias. Una carrera para los comunicadores del mañana.</p>
+                    <a href="#" class="inline-block text-cun-green font-semibold border-b-2 border-cun-green hover:border-cun-yellow transition-colors duration-200">Más información</a>
+                </div>
+                <!-- Tarjeta de Programa 4 -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-2">Contaduría Pública</h3>
+                    <p class="text-gray-600 mb-4">Desarrolla habilidades financieras esenciales para el mundo corporativo. Conviértete en un experto en números y estrategia.</p>
+                    <a href="#" class="inline-block text-cun-green font-semibold border-b-2 border-cun-green hover:border-cun-yellow transition-colors duration-200">Más información</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Créditos y Propósito (inicialmente oculta) -->
+        <section id="credits-page" class="page-section hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-cun-green mb-8">
+                Impulsando el Talento: La Visión Detrás de la Copa CUN
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sección de Créditos -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-4">Nuestros Aliados</h3>
+                    <p class="text-gray-600 mb-4">Agradecemos a los organizadores que hicieron posible este evento:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Yamir Alejandro Martínez Osorio</li>
+                        <li>Darlin Andrea Cardona Ramirez</li>
+                        <li>Juan Gabriel Alfonso Rojas</li>
+                        <li>Timoteo Manuel Moreno Ordoñez</li>
+                        <li>Juan David Urrutia Martínez</li>
+                    </ul>
+                </div>
+                
+                <!-- Sección de Propósito -->
+                <div class="card bg-white p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-cun-green mb-4">¿Por Qué Realizamos Este Evento?</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Este torneo es una estrategia clave para fortalecer nuestra comunidad. Nuestro objetivo es identificar y apoyar el talento joven, construyendo relaciones sólidas con colegios y futuros estudiantes. Es una forma de generar oportunidades de crecimiento personal y profesional, fomentando valores como el trabajo en equipo y la excelencia.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        La Copa CUN es más que un simple torneo; es un espacio estratégico para crear lazos a largo plazo que beneficien a toda la comunidad educativa, promoviendo la visibilidad y credibilidad de nuestra institución.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-cun-green text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm md:text-base">© 2025 Corporación Unificada Nacional de Educación Superior - CUN. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para manejar la navegación entre páginas
+        function showPage(pageId) {
+            // Oculta todas las secciones
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Muestra la sección deseada
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+
+            // Actualiza la clase de los botones de navegación para indicar la página activa
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.onclick.toString().includes("showPage('" + pageId + "')")) {
+                    link.classList.remove('bg-gray-200', 'text-gray-700');
+                    link.classList.add('bg-cun-green', 'text-white');
+                } else {
+                    link.classList.remove('bg-cun-green', 'text-white');
+                    link.classList.add('bg-gray-200', 'text-gray-700');
+                }
+            });
+        }
+
+        // Configura el estado inicial
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home'); // Muestra la página de inicio por defecto
+            // Ajusta el estilo inicial del botón de inicio
+            const homeLink = document.querySelector('.nav-link');
+            if(homeLink) {
+                homeLink.classList.remove('bg-gray-200', 'text-gray-700');
+                homeLink.classList.add('bg-cun-green', 'text-white');
+            }
+        });
+    </script>
+
+</body>
+</html>
